@@ -18,7 +18,7 @@ jobs:
       - name: Step one
         uses: actions/checkout@v2
       - name: Step two
-        run: echo "NOW=Get-Date -format "yyyy-MM-dd"" >> $env:GITHUB_ENV
+        run: echo get-date -format "{dd-MMM-yyyy HH:mm}"
 
   job3:
     name: Third job
