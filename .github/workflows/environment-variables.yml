@@ -12,6 +12,7 @@ jobs:
       - name: Print custom environment variables from ubuntu-latest
         env:
           STEP_ENVIRONMENT_VARIABLE: "custom step environment variable for bash"
+          OVER_RIDE: "Step"
         run: |
           echo "Accessing environment variables in run command"
           echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
@@ -35,6 +36,7 @@ jobs:
       - name: Print custom environment variables from windows-latest
         env:
           STEP_ENVIRONMENT_VARIABLE: "custom step environment variable for powershell"
+          OVER_RIDE: "Step"
         run: |
           echo "Accessing environment variables in run command"
           echo "$Env:WORKSPACE_ENVIRONMENT_VARIABLE"
