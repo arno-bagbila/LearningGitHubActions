@@ -16,8 +16,8 @@ jobs:
       - name: Build ${{ env.ARTIFACT_NAME }} for ubuntu-latest
         run: go build ${{ env.ARTIFACT_NAME }}.go
 
-      - name: ${{ env.ARTIFACT_NAME }}
+      - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: linux
-          path: ./${{ env.ARTIFACT_NAME }}
+          name: ${{ env.ARTIFACT_NAME }}
+          path: .
