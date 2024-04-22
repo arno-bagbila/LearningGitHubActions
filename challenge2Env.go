@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-func startHttpServer2(wg *sync.WaitGroup) *http.Server {
+func startHttpServer(wg *sync.WaitGroup) *http.Server {
 	srv := &http.Server{Addr: ":11000"}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -34,13 +34,13 @@ func startHttpServer2(wg *sync.WaitGroup) *http.Server {
 	return srv
 }
 
-func main2() {
+func main() {
 	log.Printf("main: starting HTTP server")
 
 	httpServerExitDone := &sync.WaitGroup{}
 
 	httpServerExitDone.Add(1)
-	srv := startHttpServer2(httpServerExitDone)
+	srv := startHttpServer(httpServerExitDone)
 
 	log.Printf("main: serving for 10 seconds")
 
