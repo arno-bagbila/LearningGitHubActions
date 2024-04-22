@@ -40,7 +40,7 @@ func main2() {
 	httpServerExitDone := &sync.WaitGroup{}
 
 	httpServerExitDone.Add(1)
-	srv := startHttpServer(httpServerExitDone)
+	srv := startHttpServer2(httpServerExitDone)
 
 	log.Printf("main: serving for 10 seconds")
 
