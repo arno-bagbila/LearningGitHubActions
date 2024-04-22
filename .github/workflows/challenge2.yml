@@ -1,9 +1,9 @@
-name: artifact
+name: challenge2
 
 on: [push]
 
 env:
-  ARTIFACT_NAME: challenge2
+  ARTIFACT_NAME: challenge2Env
 
 jobs:
   build:
@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v1
+
+      - name: Build ${{ env.ARTIFACT_NAME }} for ubuntu-latest
+        run: go build ${{ env.ARTIFACT_NAME }}.go
 
       - name: ${{ env.ARTIFACT_NAME }}
         uses: actions/upload-artifact@v1.0.0
